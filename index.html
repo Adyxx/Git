@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Git</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    </head>
+    <body>
+        <header class="jumbotron text-center bg-primary text-light">
+            <h1 class="display-1">Základní příkazy Gitu</h1>
+        </header>
+
+             
+        <main class="container">
+          <h2>Vytvoření a konfigurace lokálního repozitáře</h2>
+       <i><p class= "text-primary">git init</p></i>   
+
+         <p>Vytvoření lokálního repozitáře</p> 
+
+        <i><p class= "text-primary">git --version</p></i> 
+
+          <p>Vypíše verzi Gitu</p>  
+
+       <i><p class= "text-primary">git config --global http.proxy http://192.168.1.1:800</p></i>  
+
+         <p>Nastaví přístup konzolové aplikace přes proxy server (globálně, tj. pro všechny repozitáře vytvořené na daném počítači).</p>
+
+       <i><p class= "text-primary">git config --global http.sslverify "false"</p></i>   
+
+         <p>Tímto příkazem je možné pro daný počítač zrušit zabezpečnou komunikaci pro
+            střednictvím https (SSL vrstvy), která vyžaduje přítomnost SSL certifikátu. 
+            Toto řešení lze použít např. pro případy, kdy na školních počítačích pracuje
+             střídavě více žáků a nepoužívají vlastní uživatelský profil s uloženým certifikátem.</p> 
+
+          <i><p class= "text-primary">git config --local user.user "prezentace"</p></i>  
+
+    <i><p class= "text-primary">git config --local user.email "prezentace@sspu-opava.cz</p></i>    
+
+           <p>Nastaví uživatelský účet pro použití v lokálním repozitáři (vhodné pro školní počítače).</p> 
+
+        <i><p class= "text-primary">    git config --global user.user "prezentace"</i>    
+
+                <i><p class= "text-primary">git config --global user.email "prezentace@sspu-opava.cz"</p></i>    
+
+         <p>Nastaví uživatelský účet pro použití v celém počítači (vhodné pro domácí počítače).</p>   
+
+         <h2>Práce s lokálním repozitářem</h2>   
+
+        <i><p class= "text-primary">git status</p></i>
+
+           <p>Zjištění aktuálního stavu repozitáře - červeně zobrazeny změněné soubory, které nejsou součástí staging area, 
+               zeleně soubory ve staging area připravené na commit.</p> 
+
+          <i><p class= "text-primary">    git add -all</p></i>  
+
+              <i><p class= "text-primary">    git add .</p></i>      
+
+           <p>Do staging area budou umístěny všechny soubory.</p> 
+
+         <i><p class= "text-primary">git add README.md</p></i>   
+
+          <p>Do staging area bude umístěn soubor README.md.</p>  
+
+          <i><p class= "text-primary">git add *.jpg, *.png</p></i>  
+
+          <p>Do staging area budou umístěny soubory (obrázky) s příponou jpg a png.</p>  
+
+        <i><p class= "text-primary">git reset</p></i>    
+
+          <p>Ze staging area budou uvolněny všechny umístěné soubory.</p> 
+
+          <i><p class= "text-primary">git reset *.jpg</p></i>  
+
+          <p>Ze staging area budou uvolněny soubory jpg.</p>  
+
+         <h2>Synchronizace lokálního a vzdáleného repozitáře</h2>   
+         <i><p class= "text-primary">git remote add origin https://github.com/prezentace/novy.git</p></i>   
+
+         <p>Připojí vzdálený repozitář pod názvem origin (obvykle zadané pojmenování), aby mohl být synchronizován s lokálním repozitářem.</p>   
+
+          <i><p class= "text-primary">git push -u origin master</p></i>  
+
+           <p>Aktualizuje stav vzdáleného repozitáře (origin) podle lokálního repozitáře (master - základní, hlavní větev repozitáře).</p> 
+
+        <i><p class= "text-primary">git push -f origin master</p></i>    
+
+          <p>Podoba příkazu, který se používá pro fixaci chyb při aktualizaci.</p>  
+
+         <i><p class= "text-primary">git pull origin master</p></i>   
+
+          <p>Aktualizuje stav lokálního repozitáře podle vzdáleného repozitáře.</p>  
+
+         <i><p class= "text-primary">git log</p></i>   
+
+          <p>Vypíše přehled jednotlivých commitů.</p>  
+
+           <i><p class= "text-primary">git log --oneline</p></i> 
+
+           <p>Vypíše zkrácený, jednořádkový přehled commitů.</p> 
+
+          <i><p class= "text-primary">git clone https://github.com/prezentace/novy.git</p></i>  
+
+           <p>Vytvoření klonu vzdáleného repozitáře na lokálním počítači.</p> 
+
+                    
+                
+
+                    </main>
+<footer>
+    <hr>
+    <p class="text-center">Adam Štencl, 2019</p>
+</footer>
+    </body>
+</html>
